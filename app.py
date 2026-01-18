@@ -27,9 +27,10 @@ df=pd.DataFrame({
     'Years of Experience':[experince]
 })
 #Predict
-if st.button('Predict salary'):
-  for col in df.columns:
-    df[col]=encoders[col].transform(df[col])
+for col in df.columns:
+    if col in encoders:          # sirf wahi column encode honge
+        df[col] = encoders[col].transform(df[col])
+
 
   prediction=model.predict(df)
   st.success(f"Predicted Salary:{prediction[0]:,.2f}")

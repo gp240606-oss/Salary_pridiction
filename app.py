@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model & encoders
-model = joblib.load('Salary_prediction_model.pkl')
+model = joblib.load('Salary_prediction_model .pkl')
 encoders = joblib.load('label_encoder_sp.pkl')
 
 st.title('💼 Salary Prediction App')
